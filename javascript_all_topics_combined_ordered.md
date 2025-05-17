@@ -4,7 +4,7 @@
 
 ### 1. What is a closure in JavaScript?
 
-```
+
 🔑 Key Points:
 1. Concept
 2. Scope Access
@@ -34,13 +34,13 @@ console.log(counter()); // 2
 Here, `counter()` keeps access to `count` even though `outer()` has already returned. That's closure in action.
 
 This is widely used in event handlers, modules, and factory functions where **persistent private state** is needed.
-```
+
 
 ---
 
 ### 2. How are closures used in real projects?
 
-```
+
 🔑 Key Points:
 1. Encapsulation
 2. State Preservation
@@ -67,13 +67,13 @@ Other examples include:
 - Private variables in modules
 - Custom hooks in React (useState, useCallback)
 - Functional factory patterns
-```
+
 
 ---
 
 ### 3. Can you create a closure example?
 
-```
+
 🔑 Key Points:
 1. Code Snippet
 2. Behavior Demonstration
@@ -104,9 +104,9 @@ In this code:
 - `increment`, `decrement`, and `getValue` are closures that access `count`.
 
 This pattern is useful in creating **modular reusable logic** with private internal states.
-```
 
---------------------------------------------------------------------------------
+
+---
 
 # Javascript Topic 2 Hoisting
 
@@ -114,7 +114,7 @@ This pattern is useful in creating **modular reusable logic** with private inter
 
 ### 4. What is hoisting in JavaScript?
 
-```
+
 🔑 Key Points:
 1. Concept
 2. Declarations vs. Initializations
@@ -173,13 +173,13 @@ var sayBye = function () {
 ```
 
 Because function expressions are treated like variables: only the declaration (`sayBye`) is hoisted, not the function definition.
-```
+
 
 ---
 
 ### 5. Are `let` and `const` hoisted too?
 
-```
+
 🔑 Key Points:
 1. Yes, but...
 2. Temporal Dead Zone (TDZ)
@@ -200,13 +200,13 @@ let a = 20;
 Because of TDZ, you must **declare and initialize** `let` and `const` before usage.
 
 They also offer **block-level scoping**, unlike `var` which is function-scoped.
-```
+
 
 ---
 
 ### 6. What gets hoisted: declarations or initializations?
 
-```
+
 🔑 Key Points:
 1. Declarations only
 2. Not values
@@ -237,9 +237,9 @@ var bar = function () { console.log("Bye"); };
 ```
 
 Understanding what exactly gets hoisted helps avoid bugs and improves your debugging skills.
-```
 
---------------------------------------------------------------------------------
+
+----
 
 # Javascript Topic 3 Scope
 
@@ -247,7 +247,7 @@ Understanding what exactly gets hoisted helps avoid bugs and improves your debug
 
 ### 7. Difference between `var`, `let`, and `const`?
 
-```
+
 🔑 Key Points:
 1. Scope
 2. Reassignment
@@ -277,13 +277,13 @@ console.log(c); // ReferenceError
 
 - `var` leaks outside the block due to function scope.
 - `let` and `const` are confined to the block.
-```
+
 
 ---
 
 ### 8. What is lexical scope?
 
-```
+
 🔑 Key Points:
 1. Scope Defined at Write-time
 2. Nested Functions
@@ -310,13 +310,13 @@ greet(); // "Manish"
 ```
 
 - Here, `inner` has access to `name` because of where it was **written**, not how it's called.
-```
+
 
 ---
 
 ### 9. What is block scope vs function scope?
 
-```
+
 🔑 Key Points:
 1. `let` / `const` = Block Scoped
 2. `var` = Function Scoped
@@ -345,9 +345,9 @@ function demo() {
 ```
 
 Understanding the difference helps prevent **variable leakage** and bugs due to premature access.
-```
 
---------------------------------------------------------------------------------
+
+---
 
 # Javascript Topic 4 Data Types And Equality
 
@@ -355,7 +355,7 @@ Understanding the difference helps prevent **variable leakage** and bugs due to 
 
 ### 10. What are the primitive types in JavaScript?
 
-```
+
 🔑 Key Points:
 1. 7 Primitive Types
 2. Immutable
@@ -382,13 +382,13 @@ console.log(a); // "hi"
 ```
 
 Unlike **objects**, primitives do not share references.
-```
+
 
 ---
 
 ### 11. Difference between `==` and `===`?
 
-```
+
 🔑 Key Points:
 1. `==` does type coercion
 2. `===` is strict comparison
@@ -414,13 +414,13 @@ null === undefined // false
 **Best Practice:** Always use `===` to avoid bugs caused by implicit conversions.
 
 Use `==` only if you **know the coercion behavior** and it’s intentional.
-```
+
 
 ---
 
 ### 12. What is `typeof null` and why is it an object?
 
-```
+
 🔑 Key Points:
 1. Historical Bug
 2. `typeof null` === 'object'
@@ -448,9 +448,9 @@ if (x == null) {
 ```
 
 Remember: `typeof null` being `'object'` is a **gotcha** — know it to avoid surprise bugs.
-```
 
---------------------------------------------------------------------------------
+
+---
 
 # Javascript Topic 5 Objects And Prototypes
 
@@ -458,7 +458,7 @@ Remember: `typeof null` being `'object'` is a **gotcha** — know it to avoid su
 
 ### 13. What is prototypal inheritance?
 
-```
+
 🔑 Key Points:
 1. Object Inheritance
 2. Shared Properties via Prototype Chain
@@ -482,13 +482,13 @@ console.log(child.__proto__ === parent); // true
 Here, `child` inherits the `greet()` method from `parent`.
 
 Unlike class-based languages (Java, C++), JavaScript's inheritance is **object-to-object**, allowing **flexible and dynamic inheritance**.
-```
+
 
 ---
 
 ### 14. What is the prototype chain?
 
-```
+
 🔑 Key Points:
 1. Lookup Path
 2. Ends at `null`
@@ -524,13 +524,13 @@ user → Person.prototype → Object.prototype → null
 ```
 
 This is called the **prototype chain**.
-```
+
 
 ---
 
 ### 15. How does `Object.create()` work?
 
-```
+
 🔑 Key Points:
 1. Creates a New Object
 2. Sets Prototype
@@ -568,9 +568,9 @@ const obj = Object.create(Object.prototype, {
 ```
 
 This method gives **fine-grained control over inheritance**.
-```
 
---------------------------------------------------------------------------------
+
+---
 
 # Javascript Topic 6 This Keyword
 
@@ -578,7 +578,7 @@ This method gives **fine-grained control over inheritance**.
 
 ### 16. How does `this` behave in different contexts?
 
-```
+
 🔑 Key Points:
 1. Depends on call-site
 2. Different in strict mode
@@ -632,13 +632,13 @@ obj.greet(); // `this` refers to outer scope, not `obj`
 ```
 
 🔁 Arrow functions do **not bind their own `this`** — they inherit it from the surrounding context (lexical scope).
-```
+
 
 ---
 
 ### 17. What’s the difference between `call`, `apply`, and `bind`?
 
-```
+
 🔑 Key Points:
 1. All set the value of `this`
 2. `call` and `apply` invoke the function
@@ -668,13 +668,13 @@ console.log(sayHey("Hey")); // "Hey, Kini"
 ```
 
 Use `bind` when you want to **preserve `this`** for future calls, like in event handlers.
-```
+
 
 ---
 
 ### 18. What is lexical `this` in arrow functions?
 
-```
+
 🔑 Key Points:
 1. Arrow functions don’t have their own `this`
 2. `this` is captured from the enclosing scope
@@ -703,9 +703,9 @@ This lexical behavior is especially useful in:
 - React components
 - Event handlers
 - Timeout/callback functions
-```
 
---------------------------------------------------------------------------------
+
+---
 
 # Javascript Topic 7 Functions
 
@@ -713,7 +713,7 @@ This lexical behavior is especially useful in:
 
 ### 19. What is the difference between function declaration and expression?
 
-```
+
 🔑 Key Points:
 1. Declaration is hoisted
 2. Expression is not hoisted (assigned at runtime)
@@ -748,13 +748,13 @@ Use function expressions when you:
 - Want to assign a function to a variable
 - Need closure over scoped variables
 - Use functions as arguments
-```
+
 
 ---
 
 ### 20. What is a higher-order function?
 
-```
+
 🔑 Key Points:
 1. Accepts functions as arguments
 2. Returns a function
@@ -792,13 +792,11 @@ This is foundational for:
 - Functional programming
 - React hooks (`useCallback`, `useMemo`)
 - Array methods like `.map`, `.filter`, `.reduce`
-```
 
 ---
 
 ### 21. What is a pure function?
 
-```
 🔑 Key Points:
 1. Same input = same output
 2. No side effects
@@ -832,9 +830,8 @@ Pure functions are easier to:
 - **Compose**
 
 They are central to **functional programming** and libraries like Redux.
-```
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 8 Event Loop And Async
 
@@ -842,7 +839,6 @@ They are central to **functional programming** and libraries like Redux.
 
 ### 22. How does the JavaScript event loop work?
 
-```
 🔑 Key Points:
 1. Single-threaded
 2. Task queues (macro + micro)
@@ -887,13 +883,11 @@ Timeout
 ```
 
 ➡️ Because promises go to the **microtask queue**, and timeouts go to the **macrotask queue**.
-```
 
 ---
 
 ### 23. What are microtasks and macrotasks?
 
-```
 🔑 Key Points:
 1. Microtasks: Promises, queueMicrotask
 2. Macrotasks: setTimeout, setInterval, fetch
@@ -921,7 +915,6 @@ D
 C
 B
 ```
-```
 
 ---
 
@@ -938,7 +931,6 @@ setTimeout(() => console.log("3"), 0);
 console.log("4");
 ```
 
-```
 🔑 Key Points:
 1. `await` yields to microtask queue
 2. `setTimeout` is macrotask
@@ -962,9 +954,8 @@ Output:
 - Then the **macrotask** (`3`) runs.
 
 Understanding this sequencing is crucial for debugging async bugs and race conditions.
-```
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 9 Promises
 
@@ -972,7 +963,6 @@ Understanding this sequencing is crucial for debugging async bugs and race condi
 
 ### 25. How does `async/await` work under the hood? Do they use generator functions?
 
-```
 🔑 Key Points:
 1. Syntactic sugar over Promises
 2. Internally modeled like generator functions
@@ -1002,11 +992,9 @@ function* exampleGen() {
 }
 const gen = exampleGen();
 gen.next().value.then(() => gen.next()); // Simulated async flow
-```
 
 ### 26. What is a promise in JavaScript?
 
-```
 🔑 Key Points:
 1. Represents a future value
 2. Has 3 states
@@ -1028,11 +1016,11 @@ const promise = new Promise((resolve) => {
 
 promise.then(console.log); // "Done!" after 1 second
 ```
-```
+
 
 ### 27. How is `.then()` different from `async/await`?
 
-```
+
 🔑 Key Points:
 1. `then()` = callback style
 2. `await` = cleaner syntax
@@ -1061,11 +1049,11 @@ try {
   handleError(err);
 }
 ```
-```
+
 
 ### 28. How to handle errors with promises?
 
-```
+
 🔑 Key Points:
 1. Use `.catch()` for `.then()` chains
 2. Use `try...catch` with `async/await`
@@ -1090,11 +1078,11 @@ async function getData() {
   }
 }
 ```
-```
+
 
 ### 29. Convert a callback-based function to a promise-based one
 
-```
+
 🔑 Key Points:
 1. Use `new Promise()`
 2. Wrap legacy callback
@@ -1115,9 +1103,8 @@ function loadDataPromise() {
 
 loadDataPromise().then(console.log);
 ```
-```
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 10 Call Apply Bind
 
@@ -1125,12 +1112,11 @@ loadDataPromise().then(console.log);
 
 ### 30. What are `call()`, `apply()`, and `bind()` in JavaScript?
 
-```
 🔑 Key Points:
 1. All three are used to **manually set `this`**
 2. `call()` and `apply()` invoke the function immediately
 3. `bind()` returns a new function with `this` permanently set
-```
+
 
 ---
 
@@ -1188,7 +1174,7 @@ sayHello(); // Hey, Manish
 | `apply` | Yes       | Array of args    | Return value    |
 | `bind`  | No        | Individual args  | New function    |
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 11 Array Methods
 
@@ -1262,7 +1248,7 @@ const count = names.reduce((acc, name) => {
 | `filter` | Select based on condition| New array      |
 | `reduce` | Accumulate values        | Single value   |
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 12 Destructuring Spread Rest
 
@@ -1270,7 +1256,6 @@ const count = names.reduce((acc, name) => {
 
 ### 32. What is object and array destructuring?
 
-```
 🔑 Key Points:
 1. Unpack values into variables
 2. Works for arrays and objects
@@ -1301,13 +1286,11 @@ console.log(name, age); // "Manish", 27
 You can also:
 - Rename: `const { name: userName } = user`
 - Add default: `const { email = "N/A" } = user`
-```
 
 ---
 
 ### 33. What is the spread operator (`...`) in JavaScript?
 
-```
 🔑 Key Points:
 1. Expands arrays/objects
 2. Useful in copying, merging
@@ -1315,7 +1298,7 @@ You can also:
 
 ✅ Answer:
 The **spread operator** (`...`) unpacks values from arrays or objects.
-```
+
 
 #### 🔹 Array spread:
 ```js
@@ -1338,14 +1321,12 @@ Used for:
 
 ### 34. What is the rest parameter (`...`) in JavaScript?
 
-```
 🔑 Key Points:
 1. Gathers remaining items
 2. Opposite of spread
 3. Works in function arguments and destructuring
 
 ✅ Answer:
-```
 
 #### 🔹 In function parameters:
 ```js
@@ -1369,7 +1350,7 @@ console.log(a);      // 1
 console.log(others); // { b: 2, c: 3 }
 ```
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 13 Rest Vs Spread
 
@@ -1377,12 +1358,11 @@ console.log(others); // { b: 2, c: 3 }
 
 ### 35. Difference Between Rest Parameter and Spread Operator
 
-```
 🔑 Key Points:
 1. Both use `...` syntax
 2. Purpose differs: collecting vs expanding
 3. Context matters (function vs data structure)
-```
+
 
 ---
 
@@ -1445,7 +1425,7 @@ Math.max(...args); // 10
 | In Arrays/Objects | Collects remaining items             | Copies/merges items               |
 | Output            | Always an array                      | Individual elements               |
 
---------------------------------------------------------------------------------
+----
 
 # Javascript Topic 14 Object Utils
 
@@ -1453,14 +1433,12 @@ Math.max(...args); // 10
 
 ### 36. Difference between `Object.keys()`, `Object.values()`, and `Object.entries()`
 
-```
 🔑 Key Points:
 1. All used to inspect objects
 2. Return different formats
 3. Useful in iterations and transformations
 
 ✅ Answer:
-```
 
 #### 📌 `Object.keys(obj)`
 Returns an array of **own property names** (keys).
@@ -1493,14 +1471,12 @@ for (const [key, value] of Object.entries(user)) {
 
 ### 37. How to deep clone an object in JavaScript?
 
-```
 🔑 Key Points:
 1. Shallow copy ≠ Deep copy
 2. Use recursion or libraries for deep copy
 3. JSON trick has limitations
 
 ✅ Answer:
-```
 
 #### ❌ Shallow copy:
 ```js
@@ -1528,14 +1504,12 @@ const copy = structuredClone(obj1);
 
 ### 38. What is `Object.freeze()`?
 
-```
 🔑 Key Points:
 1. Makes an object immutable
 2. Prevents new properties or changes
 3. Shallow only
 
 ✅ Answer:
-```
 
 ```js
 const user = { name: "Manish" };
@@ -1556,7 +1530,7 @@ obj.inner.a = 10; // ✅ Works, because `inner` wasn't frozen
 
 ✅ Deep freeze requires recursion.
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 15 Garbage Collection
 
@@ -1564,7 +1538,6 @@ obj.inner.a = 10; // ✅ Works, because `inner` wasn't frozen
 
 ### 39. What is garbage collection in JavaScript?
 
-```
 🔑 Key Points:
 1. JS uses automatic garbage collection
 2. Based on reachability
@@ -1584,13 +1557,11 @@ a = null; // original object is now unreachable → eligible for GC
 
 ✅ No need to manually free memory.
 🚫 But you can create **memory leaks** (e.g., global variables, uncleaned DOM references).
-```
 
 ---
 
 ### 40. How do memory leaks happen in JS and how to prevent them?
 
-```
 🔑 Key Points:
 1. Caused by unreferenced-but-retained objects
 2. Global variables, timers, closures can leak
@@ -1616,9 +1587,8 @@ function saveData(key, value) {
 - Clear intervals/timeouts: `clearInterval`, `clearTimeout`
 - Clean up event listeners (`element.removeEventListener`)
 - Use WeakMap/WeakSet for object caches (GC-friendly)
-```
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 16 Modules
 
@@ -1626,7 +1596,6 @@ function saveData(key, value) {
 
 ### 41. Difference between CommonJS and ES Modules
 
-```
 🔑 Key Points:
 1. CommonJS = Node.js, synchronous
 2. ES Modules = modern standard, async
@@ -1640,7 +1609,6 @@ function saveData(key, value) {
 | Execution       | Synchronous              | Asynchronous                 |
 | Scope           | Wrapped in function      | Strict mode, block-scoped    |
 | Used In         | Node.js (legacy)         | Modern JS + browsers         |
-```
 
 #### 📌 CommonJS:
 ```js
@@ -1656,7 +1624,7 @@ export default myFunc;
 
 ✅ Use ES Modules for modern JS and tree-shaking support.
 
---------------------------------------------------------------------------------
+---
 
 # Javascript Topic 17 Try Catch Finally
 
@@ -1664,7 +1632,6 @@ export default myFunc;
 
 ### 42. How does `try...catch` work in JavaScript?
 
-```
 🔑 Key Points:
 1. Used for synchronous error handling
 2. `catch` handles exceptions
@@ -1686,7 +1653,6 @@ try {
 - `try` block contains code that may throw an error
 - `catch` block handles the error
 - `finally` runs **no matter what** — even if an error occurs or not
-```
 
 ---
 
@@ -1721,7 +1687,6 @@ async function fetchData() {
 
 ### 43. What is the `finally` block used for?
 
-```
 🔑 Key Points:
 1. Always runs
 2. Used for cleanup
@@ -1755,7 +1720,6 @@ try {
 
 ### 44. What is optional chaining (`?.`) in JavaScript?
 
-```
 🔑 Key Points:
 1. Safely access nested properties
 2. Prevents runtime errors on `undefined` or `null`
@@ -1784,7 +1748,7 @@ It short-circuits and returns `undefined` if **anything before `?.` is `null` or
 
 ### 45. What is nullish coalescing (`??`) in JavaScript?
 
-```
+
 🔑 Key Points:
 1. Provides default **only** for `null` or `undefined`
 2. Better than `||` for falsy values like 0 or ""
@@ -1792,7 +1756,6 @@ It short-circuits and returns `undefined` if **anything before `?.` is `null` or
 
 ✅ Answer:
 **Nullish coalescing (`??`)** returns the **right-hand value only if the left is `null` or `undefined`**.
-```
 
 #### 📌 Example:
 ```js
@@ -1837,7 +1800,6 @@ console.log(theme); // "dark" — safely accessed + fallback
 
 ### 46. What are generators in JavaScript?
 
-```
 🔑 Key Points:
 1. Functions that can pause (`yield`) and resume
 2. Use `function*` and `yield`
@@ -1847,7 +1809,6 @@ console.log(theme); // "dark" — safely accessed + fallback
 A **generator** is a special function that can **pause execution** using `yield` and **resume later** using `.next()`.
 
 You define a generator with `function*`, and use `yield` to return values one-by-one.
-```
 
 ---
 
@@ -1920,7 +1881,6 @@ console.log(it.next(10));     // { value: 15, done: true }
 
 ### 47. What is Babel and why is it used?
 
-```
 🔑 Key Points:
 1. JavaScript compiler (transpiler)
 2. Converts modern JS to backward-compatible JS
@@ -1928,7 +1888,6 @@ console.log(it.next(10));     // { value: 15, done: true }
 
 ✅ Answer:
 **Babel** is a **JavaScript compiler** that lets you write modern ES6+ code and convert (transpile) it into an older version (like ES5) to ensure **browser compatibility**.
-```
 
 #### Example:
 ```js
@@ -1947,9 +1906,10 @@ var greet = function(name) {
 - Async/await
 - JSX (in React)
 
+---
+
 ### 48. What is a transpiler vs a compiler?
 
-```
 🔑 Key Points:
 1. Transpiler → same-level language (e.g., JS → older JS)
 2. Compiler → higher-to-lower language (e.g., Java → bytecode)
@@ -1961,11 +1921,11 @@ A **transpiler** translates code **from one version of a language to another** (
 A **compiler** typically converts high-level code into **machine code** or **intermediate bytecode** (e.g., C++ → binary, Java → JVM bytecode).
 
 Babel is a transpiler, not a traditional compiler — it doesn’t generate machine code.
-```
+
+---
 
 ### 49. What is tree shaking?
 
-```
 🔑 Key Points:
 1. Removes unused code during bundling
 2. Requires ES Modules (`import/export`)
@@ -1975,7 +1935,6 @@ Babel is a transpiler, not a traditional compiler — it doesn’t generate mach
 **Tree shaking** is a build optimization technique that **removes unused exports** from your final JavaScript bundle.
 
 ✅ Supported by tools like **Webpack**, **Rollup**, **esbuild**, and **Vite**.
-```
 
 #### Example:
 ```js
@@ -1993,7 +1952,6 @@ In production builds, `unused()` is **eliminated**.
 
 ### 50. Bonus: What is polyfilling vs transpiling?
 
-```
 🔑 Key Points:
 1. Polyfill = runtime shim
 2. Transpile = code conversion
@@ -2002,7 +1960,7 @@ In production builds, `unused()` is **eliminated**.
 ✅ Answer:
 - **Transpiling**: Convert code to older syntax (e.g., async → generators)
 - **Polyfilling**: Add missing APIs that **don’t exist natively** in the browser
-```
+
 
 #### Example:
 ```js
@@ -2015,4 +1973,4 @@ if (!Array.prototype.includes) {
 
 ✅ Babel can **transpile syntax** and inject polyfills (via `@babel/preset-env` + `core-js`).
 
---------------------------------------------------------------------------------
+---
